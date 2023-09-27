@@ -1,12 +1,31 @@
 apiVersion: entity.accelerator.apps.tanzu.vmware.com/v1alpha1
 kind: Accelerator
 metadata:
-  name: hello
+  name: bs-hello-acc
   tags:
-    - hello
+    - simple
     - getting-started
-  title: Hello World
-  description: Contains just a README
+    - test
+  title: Backstage Test Accelerator
+  description: testing acc flow in BS mode
 spec:
   accelerator:
-    iconUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HelloWorld.svg/1024px-HelloWorld.svg.png
+    iconUrl: https://images.freecreatives.com/wp-content/uploads/2015/05/smiley-559124_640.jpg
+    options:
+      - name: testOption
+        label: are you excited about TAP 1.7.0?
+        inputType: select
+        choices:
+          - value: "yes1"
+            text: Yes!
+          - value: "very"
+            text: I'm very excited!
+        defaultValue: "yes1"
+    imports:
+      - name: bs-hello-frag
+  engine:
+    chain:
+      - merge:
+          - include: ["**/*"]
+          - type: InvokeFragment
+            reference: bs-hello-frag

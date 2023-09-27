@@ -1,0 +1,26 @@
+apiVersion: entity.accelerator.apps.tanzu.vmware.com/v1alpha1
+kind: Fragment
+metadata:
+  name: bs-hello-frag
+spec:
+  accelerator:
+    options:
+      - name: bsWeather
+        inputType: select
+        label: what is the weather today?
+        choices:
+          - value: "sunny"
+            text: sunny
+          - value: "rainy"
+            text: rainy
+          - value: "cloudy"
+            text: cloudy
+        defaultValue: "sunny"
+  engine:
+    merge:
+      - include: ["someCodeFile"]
+        chain:
+          - type: ReplaceText
+            regex:
+              pattern: "weather = .*"
+              with: "'weather = ''' + #bsWeather + ''''"
