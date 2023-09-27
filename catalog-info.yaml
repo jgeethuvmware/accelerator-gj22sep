@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: accelerator-gj22sep
+  annotations:
+    github.com/project-slug: jgeethuvmware/accelerator-gj22sep
+spec:
+  type: other
+  lifecycle: unknown
+  owner: default-org
