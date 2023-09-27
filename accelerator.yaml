@@ -6,7 +6,7 @@ metadata:
     - simple
     - getting-started
     - test
-  title: Backstage Test Accelerator
+  title: Backstage Test Accelerator - Hello
   description: testing acc flow in BS mode
 spec:
   accelerator:
