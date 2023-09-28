@@ -19,7 +19,7 @@ spec:
           - value: "yes1"
             text: Yes!
           - value: "very"
-            text: I'm very excited!
+            text: I'm indeed very excited!
         defaultValue: "yes1"
     imports:
       - name: bs-hello-frag
